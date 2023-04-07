@@ -1,0 +1,387 @@
+::-webkit-scrollbar {
+  width: 0;
+}
+
+.dropdown.about{
+    left: 51.5%;
+}
+
+.dropdown.services{
+    left: 53.75%;
+}
+
+.dropdown.contacts{
+    position: absolute;
+    right: 6%;
+}
+
+.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.disabled {
+    pointer-events: none;
+    color: #b22222;
+    background: #ffffff;
+    border-color: #ffffff;
+}
+.loglink{
+    color: #b22222;
+}
+.loglink:hover{
+    color: #b22222;
+}
+.hellotext{
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding-top: 22%;
+    padding-bottom: 21%;
+    border: solid 30px black;
+    position: relative;
+}
+.hellotext span {
+    background: black;
+    display: inline-block;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.1);
+}
+
+#messageUserLoginM {
+    display:none;
+    color: #000;
+    position: relative;
+    margin-left: 1vw;
+}
+
+#messageUserLoginM p {
+    padding: 10px 35px;
+    font-size: 18px;
+}
+
+#messageMailM {
+    display:none;
+    color: #000;
+    position: relative;
+    margin-left: 1vw;
+}
+
+#messageMailM p {
+    padding: 0px 35px;
+    font-size: 18px;
+}
+
+#messageM {
+    display:none;
+    color: #000;
+    position: relative;
+    margin-left: 1vw;
+}
+
+#messageM p {
+    padding: 10px 35px;
+    font-size: 18px;
+}
+
+#messageUserLogin {
+    display:none;
+    color: #000;
+    position: relative;
+    margin-left: 1vw;
+}
+
+#messageUserLogin p {
+    padding: 10px 35px;
+    font-size: 18px;
+}
+
+#messageMail {
+    display:none;
+    color: #000;
+    position: relative;
+    margin-left: 1vw;
+}
+
+#messageMail p {
+    padding: 0px 35px;
+    font-size: 18px;
+}
+
+#message {
+    display:none;
+    color: #000;
+    position: relative;
+    margin-left: 1vw;
+}
+
+#message p {
+    padding: 10px 35px;
+    font-size: 18px;
+}
+
+#messageConfirmation {
+    display:none;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #000;
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+    margin-left: 1vw;
+}
+
+#messageConfirmation p {
+    padding: 10px 35px;
+    font-size: 18px;
+}
+
+.disabled {
+    pointer-events: none;
+    color: #b22222;
+    background-color: #fff;
+    border-color: #fff;
+}
+
+.carousel-indicators li {
+  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.carousel-indicators .active {
+  background-color: #b22222;
+}
+
+.carousel{
+  background-color: black;
+  width: 100%;
+  height: 90%;
+}
+
+.carousel-inner h3 {
+  padding: 20px;
+  animation: anime-H3 1.3s ease-out;
+}
+
+.carousel-inner p {
+  padding: 20px;
+  animation: anime-P 1.6s ease-out;
+}
+
+@keyframes anime-H3 {
+  from {
+    opacity: 0;
+    transform: translateX(-2000px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes anime-P {
+  from {
+    opacity: 0;
+    transform: translateX(2000px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes anime-Y {
+  from {
+    opacity: 0;
+    transform: translateY(1000px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.col-lg-6 col-md-6 col-sm-12 {
+padding: 20%;
+}
+
+.leftstr, .rightstr {
+    padding-top: 5%;
+    float: left;
+    width: 50%;
+}
+
+.leftstr {
+    padding-left: 4%;
+    text-align: left;
+}
+
+.rightstr {
+    padding-right: 4%;
+    text-align: right;
+}
+
+.card{
+background-color: black;
+}
+
+.card-image{
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: none;
+}
+
+.card-image img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    transition: 1s;
+}
+
+.card-text {
+    display: none;
+}
+
+.card-image img:hover{
+    transform: scale(1.1);
+    background: black;
+    opacity:0.5;
+}
+
+.paginationcenter {
+    padding-top: 5%;
+    text-align: center;
+}
+
+.pagination {
+    display: inline-block;
+}
+
+.pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    margin: 0 4px;
+}
+
+.pagination a.active {
+    background-color: #3fafff;
+    color: ghostwhite;
+}
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #99d4ff;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+#myBtn:hover {
+    background-color: #3fafff;
+}
+
+.modal-header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 15px;
+    background-color: #000000;
+    padding: 20px;
+    border: #000000 solid 3px;
+}
+
+.modal-body{
+    background-color: #ffffff;
+    padding: 20px;
+    border: #000000 solid 10px;
+}
+
+.modal-body-area{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 5px;
+    background-color: #ffffff;
+}
+
+.modal-footer{
+    background-color: #000000;
+    padding: 20px;
+    border: #000000 solid 10px;
+}
+
+.btn-secondary{
+    background: #b22222;
+    border-color: #b22222;
+}
+
+.btn-secondary:hover{
+    background: #b22222;
+    border-color: #b22222;
+}
+
+.btn-cancel{
+    background: #ff9999;
+    border-color: #ff9999;
+}
+
+.btn-cancel:hover{
+    background: #b22222;
+    border-color: #b22222;
+}
+
+.btn-primary:focus, .btn-primary.focus {
+    box-shadow: 0 0 0 0rem #000000;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+    color: #b22222;
+    background: #000000;
+    border-color: #000000;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0rem #000000;
+}
+
+.btn-auth{
+    background: #ffffff;
+    border: #ffffff solid 3px;
+    color: #b22222;
+}
+
+.btn-auth:hover{
+    background: #ffffff;
+    border: #ffffff solid 3px;
+    color: #b22222;
+}
+
+.btn-auth:focus, .btn-auth.focus {
+    box-shadow: 0 0 0 0rem #ffffff;
+    color: #b22222;
+}

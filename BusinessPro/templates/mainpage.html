@@ -1,0 +1,509 @@
+{% extends 'base.html' %}
+
+{% block title %}
+БизнесПрофи44
+{% endblock %}
+
+{% block body %}
+<div class="blocktext">
+    <div class="article-carousel top">
+        <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="main-img"><img class="carousel-pic" src="{{ url_for('static', filename='images/MainPicture.png') }}" alt="" , height="87%", width=100%></div>
+                    <div class="main-img-mobile"><img class="mob-pic" src="{{ url_for('static', filename='images/MobileStripes.png') }}" alt="" , height="87%", width=100%></div>
+                    <div class="carousel-caption">
+                        <div class="main-credo">Решения для бизнеса <br>в digital-пространстве</div>
+                        <a href="main#get-info"><div class="more-button"><button class="btn btn-more">Обсудить проект</button></div></a>
+                        <div class="main-credo-mobile">Решения для бизнеса <br>в digital-пространстве</div>
+                        <a href="main#get-info"><div class="more-button-mobile"><button class="btn btn-more-mobile">Обсудить проект</button></div></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Articles-->
+    <div class="container">
+        <div class="stats-container">
+            <div class="img-header" id="stats-info"><img src="{{ url_for('static', filename='images/Numbers.png') }}" alt=""></div>
+            <div class="stats-img"><img src="{{ url_for('static', filename='images/Statistics.png') }}" alt="" , width=100%></div>
+            <div class="img-header-mobile"><img src="{{ url_for('static', filename='images/Numbers.png') }}" alt="", width="80%"></div>
+            <div class="stats-img-mobile"><img src="{{ url_for('static', filename='images/StatsMobile.png') }}" alt="", width="80%"></div>
+        </div>
+        <div class="skills-container">
+            <div class="img-header" id="skills-info"><img src="{{ url_for('static', filename='images/Skills.png') }}" alt=""></div>
+            <div class="img-header-mobile skills"><img src="{{ url_for('static', filename='images/SkillsMobile.png') }}" alt="", width="80%"></div>
+            <table class="skills-table">
+                <tr>
+                    <td class="skills-column header">Разработка сайтов</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td class="skills-column header">Дизайн</td>
+                </tr>
+                <tr>
+                    <td class="skills-column text">- landing page <br> - Корпоративный портал <br> - Интернет-магазин
+                    </td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td class="skills-column text">- Корпоративный дизайн <br> - web-дизайн <br> &nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="skills-column header">Проектирование</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td class="skills-column header">1С и 1С-Битрикс</td>
+                </tr>
+                <tr>
+                    <td class="skills-column text">- Аналитика идей <br> - Прототипирование проекта <br> - Подготовка
+                        технического задания
+                    </td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td class="skills-column text">- Разработка комплексных CRM-решений <br> - Осуществление интеграций
+                        <br> - 1С-разработка
+                    </td>
+                </tr>
+            </table>
+            <table class="skills-table-mobile">
+                <tr>
+                    <td class="skills-column-mobile header">Разработка сайтов</td>
+                </tr>
+                <tr>
+                    <td class="skills-column-mobile text"> &nbsp;<br>- landing page <br> - Корпоративный портал <br> - Интернет-магазин</td>
+                </tr>
+                </tr>
+                <tr>
+                    <td class="skills-column-mobile text"> &nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="skills-column-mobile header">Дизайн</td>
+                </tr>
+                <tr>
+                    <td class="skills-column-mobile text"> &nbsp;<br>- Корпоративный дизайн <br> - web-дизайн</td>
+                </tr>
+                <tr>
+                    <td class="skills-column-mobile text"> &nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="skills-column-mobile header">Проектирование</td>
+                </tr>
+                <tr>
+                    <td class="skills-column-mobile text"> &nbsp;<br>- Аналитика идей <br> - Прототипирование проекта <br> - Подготовка
+                        технического задания
+                    </td>
+                </tr>
+                <tr>
+                    <td class="skills-column-mobile text"> &nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="skills-column-mobile header">1С и 1С-Битрикс</td>
+                </tr>
+                <tr>
+                    <td class="skills-column-mobile text"> &nbsp;<br>- Разработка комплексных CRM-решений <br> - Осуществление интеграций
+                        <br> - 1С-разработка</td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-container" id="get-info">
+            <div class="img-header-mobile"><img src="{{ url_for('static', filename='images/TalkAbout.png') }}" alt="", width="100%"></div>
+            <div class="img-fill-mobile"><img src="{{ url_for('static', filename='images/FillTheFormMobile.png') }}" alt="", width="80%"></div>
+            <table class="form-table">
+                <tr>
+                    <td class="column-left"><div class="img-header"><img src="{{ url_for('static', filename='images/TalkAbout.png') }}" alt=""></div></td>
+                    <td class="column-right"><br><img src="{{ url_for('static', filename='images/FillTheForm.png') }}" alt="" , width=85%></td>
+                </tr>
+                <tr>
+                    <td class="skills-column text"></td>
+                    <td class="skills-column text">
+                        <form method="post" autocomplete="off" class="get-offer needs-validation <?echo $wasValidated?>" novalidate>
+                            <div class="form-group">
+                                <label class="sr-only" for="NameData"><b>&nbsp; Имя</b></label>
+                                <input type="text" class="form-control" name="user_name" id="NameData" placeholder="Имя" minlength="2" maxlength="15" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="MailData"><b>&nbsp; E-Mail</b></label>
+                                <input type="email" class="form-control" name="user_mail" id="MailData"  placeholder="E-Mail" pattern="[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+" minlength="12" maxlength="64" required>
+                            </div>
+                            <div id="messageMail">
+                                <p id="MailExample" class="invalidc">Пример: <b>mailname@domain.name</b></p>
+                                <p id="MailLength" class="invalidc">Адрес электронной почты должен содержать минимум <b>10</b> символов.</p>
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="NumberData"><b>&nbsp; Телефон</b></label>
+                                <input type="text" class="form-control" name="user_number" id="NumberData"  placeholder="Телефон" pattern="^\+?[78][-\(]?\d{3}\)?-?\d{3}-?\d{2}-?\d{2}$" minlength="8" maxlength="32" required>
+                            </div>
+                            <div id="messageUserLogin">
+                                <p id="NumberLength" class="invalidc">Номер телефона должен быть указан в формате <b>89001234567</b>.</p>
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="ProjectData"><b>&nbsp; О проекте</b></label>
+                                <input type="text" class="form-control" id="ProjectData" name="user_idea" placeholder="О проекте" minlength="1" required>
+                            </div>
+                            <div id="message">
+                                <p id="TextLength" class="invalidc">Отсутствует описание проекта.</p>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-reg disabled btn-block" id="Registration">Получить предложение</button>
+                            </div>
+                            <div class="terms">Я согласен на обработку персональных данных в соответствии с условиями <u>политики конфиденциальности</u>.</div>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+            <div class="form-table-mobile">
+                <form method="post" autocomplete="off" class="get-offer-mobile needs-validation <?echo $wasValidated?>" novalidate>
+                            <div class="form-group">
+                                <label class="sr-only" for="NameDataM"><b>&nbsp; Имя</b></label>
+                                <input type="text" class="form-control" name="user_nameM" id="NameDataM" placeholder="Имя" minlength="2" maxlength="15" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="MailDataM"><b>&nbsp; E-Mail</b></label>
+                                <input type="email" class="form-control" name="user_mailM" id="MailDataM"  placeholder="E-Mail" pattern="[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+" minlength="12" maxlength="64" required>
+                            </div>
+                            <div id="messageMailM">
+                                <p id="MailExampleM" class="invalidc">Пример: <b>mailname@domain.name</b></p>
+                                <p id="MailLengthM" class="invalidc">Адрес электронной почты должен содержать минимум <b>10</b> символов.</p>
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="NumberDataM"><b>&nbsp; Телефон</b></label>
+                                <input type="text" class="form-control" name="user_numberM" id="NumberDataM"  placeholder="Телефон" pattern="^\+?[78][-\(]?\d{3}\)?-?\d{3}-?\d{2}-?\d{2}$" minlength="8" maxlength="32" required>
+                            </div>
+                            <div id="messageUserLoginM">
+                                <p id="NumberLengthM" class="invalidc">Номер телефона должен быть указан в формате <b>89001234567</b>.</p>
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="ProjectDataM"><b>&nbsp; О проекте</b></label>
+                                <input type="text" class="form-control" id="ProjectDataM" name="user_ideaM" placeholder="О проекте" minlength="1" required>
+                            </div>
+                            <div id="messageM">
+                                <p id="TextLengthM" class="invalidc">Отсутствует описание проекта.</p>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-reg disabled btn-block" id="RegistrationM">Получить предложение</button>
+                            </div>
+                            <div class="terms">Я согласен на обработку персональных данных в соответствии с условиями <u>политики конфиденциальности</u>.</div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Scripts-->
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script>
+                    var MailInput = document.getElementById("MailData");
+                    var MailExample = document.getElementById("MailExample");
+                    var MailLength = document.getElementById("MailLength");
+                    var MailPattern = /[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+/g;
+
+                    MailInput.onfocus = function() {
+                        document.getElementById("messageMail").style.display = "block";
+                    }
+
+                    MailInput.onblur = function() {
+                        document.getElementById("messageMail").style.display = "none";
+                    }
+
+                    MailInput.onkeyup = function() {
+                        if(MailInput.value.match(MailPattern)) {
+                            MailExample.classList.remove("invalidc");
+                            MailExample.classList.add("validc");
+                            MailExample.innerText = "Валидация по образцу пройдена";
+                        }
+                        else {
+                            MailExample.classList.remove("validc");
+                            MailExample.classList.add("invalidc");
+                            let html_mail = `Пример: <b>mailname@domain.name</b>`;
+                            MailExample.innerHTML = html_mail;
+                        }
+
+                        if(MailInput.value.length >= 10) {
+                            MailLength.classList.remove("invalidc");
+                            MailLength.classList.add("validc");
+                            MailLength.innerText = "Валидация по длине пройдена";
+                        }
+                        else {
+                            MailLength.classList.remove("validc");
+                            MailLength.classList.add("invalidc");
+                            let html_mail = `Адрес электронной почты должен содержать минимум <b>10</b> символов`;
+                            MailLength.innerHTML = html_mail;
+                        }
+                    }
+</script>
+<script>
+                    var NumberInput = document.getElementById("NumberData");
+                    var NumberLength = document.getElementById("NumberLength");
+                    var NumberPattern = /^\+?[78][-\(]?\d{3}\)?-?\d{3}-?\d{2}-?\d{2}$/;
+
+                    NumberInput.onfocus = function() {
+                        document.getElementById("messageUserLogin").style.display = "block";
+                    }
+
+                    NumberInput.onblur = function() {
+                        document.getElementById("messageUserLogin").style.display = "none";
+                    }
+
+                    NumberInput.onkeyup = function() {
+                        if(NumberInput.value.match(NumberPattern)) {
+                            NumberLength.classList.remove("invalidc");
+                            NumberLength.classList.add("validc");
+                            NumberLength.innerText = "Мы обязательно свяжемся с Вами";
+                        }
+                        else {
+                            NumberLength.classList.remove("validc");
+                            NumberLength.classList.add("invalidc");
+                            let html_number = `Номер телефона должен быть указан в формате <b>89001234567</b>`;
+                            NumberLength.innerHTML = string_of_html;
+                        }
+                    }
+</script>
+<script>
+                    var ProjectInput = document.getElementById("ProjectData");
+                    var TextLength = document.getElementById("TextLength");
+
+                    ProjectInput.onfocus = function() {
+                        document.getElementById("message").style.display = "block";
+                    }
+
+                    ProjectInput.onblur = function() {
+                        document.getElementById("message").style.display = "none";
+                    }
+
+                    ProjectInput.onkeyup = function() {
+                        if(ProjectInput.value.length >= 1) {
+                            TextLength.classList.remove("invalidc");
+                            TextLength.classList.add("validc");
+                            TextLength.innerText = "Описание проекта будет передано нашим специалистам";
+                        }
+                        else {
+                            TextLength.classList.remove("validc");
+                            TextLength.classList.add("invalidc");
+                            TextLength.innerText = "Отсутствует описание проекта";
+                        }
+                    }
+</script>
+<script>
+            (function() {
+                'use strict';
+                window.addEventListener('load', function() {
+                    var forms = document.getElementsByClassName('needs-validation');
+                    var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('Registration', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                    });
+
+                    var NameInput = document.getElementById('NameData');
+                    var MailInput = document.getElementById('MailData');
+                    var MailPattern = /[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+/g;
+                    var NumberInput = document.getElementById('NumberData');
+                    var NumberPattern = /^\+?[78][-\(]?\d{3}\)?-?\d{3}-?\d{2}-?\d{2}$/;
+                    var ProjectInput = document.getElementById("ProjectData");
+
+                    var Registration = document.getElementById('Registration');
+
+                    NameInput.addEventListener("keyup", function () {
+                        if (NameInput.value.length >= 2 && MailInput.value.match(MailPattern) && MailInput.value.length >= 10 && NumberInput.value.match(NumberPattern) && ProjectInput.value.length >= 1) {
+                            Registration.classList.remove('disabled');
+                        }
+                        else {
+                            Registration.classList.add('disabled');
+                        }
+                    });
+
+                    MailInput.addEventListener("keyup", function () {
+                        if (NameInput.value.length >= 2 && MailInput.value.match(MailPattern) && MailInput.value.length >= 10 && NumberInput.value.match(NumberPattern) && ProjectInput.value.length >= 1) {
+                            Registration.classList.remove('disabled');
+                        }
+                        else {
+                            Registration.classList.add('disabled');
+                        }
+                    });
+
+                    NumberInput.addEventListener("keyup", function () {
+                        if (NameInput.value.length >= 2 && MailInput.value.match(MailPattern) && MailInput.value.length >= 10 && NumberInput.value.match(NumberPattern) && ProjectInput.value.length >= 1) {
+                            Registration.classList.remove('disabled');
+                        }
+                        else {
+                            Registration.classList.add('disabled');
+                        }
+                    });
+
+                    ProjectInput.addEventListener("keyup", function () {
+                        if (NameInput.value.length >= 2 && MailInput.value.match(MailPattern) && MailInput.value.length >= 10 && NumberInput.value.match(NumberPattern) && ProjectInput.value.length >= 1) {
+                            Registration.classList.remove('disabled');
+                        }
+                        else {
+                            Registration.classList.add('disabled');
+                        }
+                    });
+                }, false);
+            })();
+</script>
+<script>
+                    var MailInput = document.getElementById("MailDataM");
+                    var MailExample = document.getElementById("MailExampleM");
+                    var MailLength = document.getElementById("MailLengthM");
+                    var MailPattern = /[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+/g;
+
+                    MailInput.onfocus = function() {
+                        document.getElementById("messageMailM").style.display = "block";
+                    }
+
+                    MailInput.onblur = function() {
+                        document.getElementById("messageMailM").style.display = "none";
+                    }
+
+                    MailInput.onkeyup = function() {
+                        if(MailInput.value.match(MailPattern)) {
+                            MailExample.classList.remove("invalidc");
+                            MailExample.classList.add("validc");
+                            MailExample.innerText = "Валидация по образцу пройдена";
+                        }
+                        else {
+                            MailExample.classList.remove("validc");
+                            MailExample.classList.add("invalidc");
+                            let html_mail = `Пример: <b>mailname@domain.name</b>`;
+                            MailExample.innerHTML = html_mail;
+                        }
+
+                        if(MailInput.value.length >= 10) {
+                            MailLength.classList.remove("invalidc");
+                            MailLength.classList.add("validc");
+                            MailLength.innerText = "Валидация по длине пройдена";
+                        }
+                        else {
+                            MailLength.classList.remove("validc");
+                            MailLength.classList.add("invalidc");
+                            let html_mail = `Адрес электронной почты должен содержать минимум <b>10</b> символов`;
+                            MailLength.innerHTML = html_mail;
+                        }
+                    }
+</script>
+<script>
+                    var NumberInput = document.getElementById("NumberDataM");
+                    var NumberLength = document.getElementById("NumberLengthM");
+                    var NumberPattern = /^\+?[78][-\(]?\d{3}\)?-?\d{3}-?\d{2}-?\d{2}$/;
+
+                    NumberInput.onfocus = function() {
+                        document.getElementById("messageUserLoginM").style.display = "block";
+                    }
+
+                    NumberInput.onblur = function() {
+                        document.getElementById("messageUserLoginM").style.display = "none";
+                    }
+
+                    NumberInput.onkeyup = function() {
+                        if(NumberInput.value.match(NumberPattern)) {
+                            NumberLength.classList.remove("invalidc");
+                            NumberLength.classList.add("validc");
+                            NumberLength.innerText = "Мы обязательно свяжемся с Вами";
+                        }
+                        else {
+                            NumberLength.classList.remove("validc");
+                            NumberLength.classList.add("invalidc");
+                            let html_number = `Номер телефона должен быть указан в формате <b>89001234567</b>`;
+                            NumberLength.innerHTML = string_of_html;
+                        }
+                    }
+</script>
+<script>
+                    var ProjectInput = document.getElementById("ProjectDataM");
+                    var TextLength = document.getElementById("TextLengthM");
+
+                    ProjectInput.onfocus = function() {
+                        document.getElementById("messageM").style.display = "block";
+                    }
+
+                    ProjectInput.onblur = function() {
+                        document.getElementById("messageM").style.display = "none";
+                    }
+
+                    ProjectInput.onkeyup = function() {
+                        if(ProjectInput.value.length >= 1) {
+                            TextLength.classList.remove("invalidc");
+                            TextLength.classList.add("validc");
+                            TextLength.innerText = "Описание проекта будет передано нашим специалистам";
+                        }
+                        else {
+                            TextLength.classList.remove("validc");
+                            TextLength.classList.add("invalidc");
+                            TextLength.innerText = "Отсутствует описание проекта";
+                        }
+                    }
+</script>
+<script>
+            (function() {
+                'use strict';
+                window.addEventListener('load', function() {
+                    var forms = document.getElementsByClassName('needs-validation');
+                    var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('RegistrationM', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                    });
+
+                    var NameInput = document.getElementById('NameDataM');
+                    var MailInput = document.getElementById('MailDataM');
+                    var MailPattern = /[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+/g;
+                    var NumberInput = document.getElementById('NumberDataM');
+                    var NumberPattern = /^\+?[78][-\(]?\d{3}\)?-?\d{3}-?\d{2}-?\d{2}$/;
+                    var ProjectInput = document.getElementById("ProjectDataM");
+
+                    var Registration = document.getElementById('RegistrationM');
+
+                    NameInput.addEventListener("keyup", function () {
+                        if (NameInput.value.length >= 2 && MailInput.value.match(MailPattern) && MailInput.value.length >= 10 && NumberInput.value.match(NumberPattern) && ProjectInput.value.length >= 1) {
+                            Registration.classList.remove('disabled');
+                        }
+                        else {
+                            Registration.classList.add('disabled');
+                        }
+                    });
+
+                    MailInput.addEventListener("keyup", function () {
+                        if (NameInput.value.length >= 2 && MailInput.value.match(MailPattern) && MailInput.value.length >= 10 && NumberInput.value.match(NumberPattern) && ProjectInput.value.length >= 1) {
+                            Registration.classList.remove('disabled');
+                        }
+                        else {
+                            Registration.classList.add('disabled');
+                        }
+                    });
+
+                    NumberInput.addEventListener("keyup", function () {
+                        if (NameInput.value.length >= 2 && MailInput.value.match(MailPattern) && MailInput.value.length >= 10 && NumberInput.value.match(NumberPattern) && ProjectInput.value.length >= 1) {
+                            Registration.classList.remove('disabled');
+                        }
+                        else {
+                            Registration.classList.add('disabled');
+                        }
+                    });
+
+                    ProjectInput.addEventListener("keyup", function () {
+                        if (NameInput.value.length >= 2 && MailInput.value.match(MailPattern) && MailInput.value.length >= 10 && NumberInput.value.match(NumberPattern) && ProjectInput.value.length >= 1) {
+                            Registration.classList.remove('disabled');
+                        }
+                        else {
+                            Registration.classList.add('disabled');
+                        }
+                    });
+                }, false);
+            })();
+</script>
+
+<script type="text/javascript" src="JS/themes.js"></script>
+{% endblock %}

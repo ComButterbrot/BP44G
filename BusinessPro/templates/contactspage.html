@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Контакты
+{% endblock %}
+
+{% block body %}
+<div class="blocktext">
+    <div class="container">
+        <div class="contacts-container">
+            <div class="img-header"><img src="{{ url_for('static', filename='images/ContactsLabel.png') }}"></div>
+            <div class="img-header-mobile contacts"><img src="{{ url_for('static', filename='images/ContactsLabel.png') }}", width="60%"></div>
+                <div class="contacts-block">
+                <div class="contacts-column header time">Работаем сейчас</div>
+                <div class="contacts-column office">Офис</div>
+                <div class="contacts-column address">г. Кострома<br> ул. Северной Правды, 41/21</div>
+                <div class="contacts-column phone-number">7(4942) 44-08-08</div>
+            </div>
+            <div class="map-info"><iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ab914b43f070351ff51cc3ab5616cf23c4d19b5f2cf35e74e3f5c361380d0c33f&amp;source=constructor" width="100%" height="100%" frameborder="0"></iframe></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

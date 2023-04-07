@@ -1,0 +1,258 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Cinemancer
+{% endblock %}
+
+{% block body %}
+        <div class="blocktextreg">
+            <div class="container">
+                <div class="row">
+                                <div class="col-md-12">
+                                    <p></p>
+                                    <form method="post" autocomplete="off" class="needs-validation <?echo $wasValidated?>" novalidate>
+                                        {% with messages = get_flashed_messages() %}
+                                        {% if messages %}
+                                        {% for msg in messages %}
+                                        <font size="4" color="ghostwhite" face="Rationale"><b>{{ msg }}</b></font>
+                                        {% endfor %}
+                                        {% endif %}
+                                        {% endwith %}
+                                        <div class="form-group">
+                                            <label class="sr-only" for="NameData"><font size="4" color="ghostwhite" face="Rationale"><b>Name</b></font></label>
+                                            <input type="text" class="form-control" name="name" id="NameData" placeholder="Name" minlength="2" maxlength="15" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="SurnameData"><font size="4" color="ghostwhite" face="Rationale"><b>Surname</b></font></label>
+                                            <input type="text" class="form-control" name="surname" id="SurnameData" placeholder="Surname" minlength="2" maxlength="15" required>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-10">
+                                                <div class="form-group">
+                                                    <input type="radio" name="AgeData" id="Over18" value="Over18">
+                                                    <label for="Over18" class="col-sm-10"><font size="4" color="green" face="Rationale"><b>I am over the age of 18</b></font></label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="radio" name="AgeData" id="Under18" value="Under18">
+                                                    <label for="Under18" class="col-sm-10"><font size="4" color="#b22222" face="Rationale"><b>I am under the age of 18</b></font></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="MailData"><font size="4" color="ghostwhite" face="Rationale"><b>E-Mail</b></font></label>
+                                            <input type="email" class="form-control" name="mail" id="MailData"  placeholder="E-Mail" pattern="[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+" minlength="12" maxlength="64" required>
+                                        </div>
+                                        <div id="messageMail">
+                                            <p id="MailExample" class="invalidc"><font size="4" face="Rationale">Example: <b>mailname@domain.name</b></font></p>
+                                            <p id="MailLength" class="invalidc"><font size="4" face="Rationale">Your E-mail Address must contain at least <b>12</b> characters.</font></p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="UserLogin"><font size="4" color="ghostwhite" face="Rationale"><b>Login</b></font></label>
+                                            <input type="text" class="form-control" name="user_login" id="UserLogin"  placeholder="Login" minlength="8" maxlength="32" required>
+                                        </div>
+                                        <div id="messageUserLogin">
+                                            <p id="LoginLength" class="invalidc"><font size="4" face="Rationale">Your Username must contain at least <b>8</b> characters.</font></p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="PasswordData"><font size="4" color="ghostwhite" face="Rationale"><b>Password</b></font></label>
+                                            <input type="password" class="form-control" id="PasswordData" name="user_password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" minlength="8" maxlength="32" required>
+                                        </div>
+                                        <div id="message">
+                                        <p><font size="4" color="ghostwhite" face="Rationale"><b>Password must contain the following:</b></font></p>
+                                        <p id="lowercase" class="invalidc"><font size="4" face="Rationale">a <b>lowercase</b> letter;</font></p>
+                                        <p id="uppercase" class="invalidc"><font size="4" face="Rationale">an <b>uppercase</b> letter;</font></p>
+                                        <p id="number" class="invalidc"><font size="4" face="Rationale">a <b>number</b>;</font></p>
+                                        <p id="length" class="invalidc"><font size="4" face="Rationale">minimum <b>8</b> characters.</font></p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="PasswordConfirmation"><font size="4" color="ghostwhite" face="Rationale"><b>Password Confirmation</b></font></label>
+                                            <input type="password" class="form-control"  id="PasswordConfirmation" name="PasswordConfirmation" placeholder="Password Confirmation" onChange="CheckPasswordMatch();" required>
+                                        </div>
+                                        <div id="messageConfirmation">
+                                        <p id="PasswordMatch" class="invalidc"><font size="4" face="Rationale">Passwords <b>don't match</b>!</font></p>
+                                        </div>
+                                        <p><input type="checkbox" name="Acceptance" id="Acceptance" value="Agreed"><font size="4" color="ghostwhite" face="Rationale"><b> I have read, understand, and agree to the Cinemancer rules. Take what you can - give nothing back!</b></font></p>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-reg disabled btn-block" id="Registration"><font size="4" face="Rationale"><b>Sign Up</b></font></button>
+                                        </div>
+                                        <font size="4" color="ghostwhite" face="Rationale"><b>Already have an account? <a class="loglink" href="login">Log in</a> then!</b></font>
+                                    </form>
+                                </div>
+                            </div>
+
+                <script type="text/javascript" src="JS/themes.js"></script>
+
+                <script>
+                    var MailInput = document.getElementById("MailData");
+                    var MailExample = document.getElementById("MailExample");
+                    var MailLength = document.getElementById("MailLength");
+
+                    MailInput.onfocus = function() {
+                        document.getElementById("messageMail").style.display = "block";
+                    }
+
+                    MailInput.onblur = function() {
+                        document.getElementById("messageMail").style.display = "none";
+                    }
+
+                    MailInput.onkeyup = function() {
+                        if(MailInput.value.match(/[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+/g)) {
+                            MailExample.classList.remove("invalidc");
+                            MailExample.classList.add("validc");
+                        }
+                        else {
+                            MailExample.classList.remove("validc");
+                            MailExample.classList.add("invalidc");
+                        }
+
+                        if(MailInput.value.length >= 12) {
+                            MailLength.classList.remove("invalidc");
+                            MailLength.classList.add("validc");
+                        }
+                        else {
+                            MailLength.classList.remove("validc");
+                            MailLength.classList.add("invalidc");
+                        }
+                    }
+                </script>
+
+                <script>
+                    var LoginInput = document.getElementById("UserLogin");
+                    var LoginLength = document.getElementById("LoginLength");
+
+                    LoginInput.onfocus = function() {
+                        document.getElementById("messageUserLogin").style.display = "block";
+                    }
+
+                    LoginInput.onblur = function() {
+                        document.getElementById("messageUserLogin").style.display = "none";
+                    }
+
+                    LoginInput.onkeyup = function() {
+                        if(LoginInput.value.length >= 8) {
+                            LoginLength.classList.remove("invalidc");
+                            LoginLength.classList.add("validc");
+                        }
+                        else {
+                            LoginLength.classList.remove("validc");
+                            LoginLength.classList.add("invalidc");
+                        }
+                    }
+                </script>
+
+                <script>
+                    var PasswordInput = document.getElementById("PasswordData");
+                    var LowerC = document.getElementById("lowercase");
+                    var UpperC = document.getElementById("uppercase");
+                    var Number = document.getElementById("number");
+                    var Length = document.getElementById("length");
+
+                    PasswordInput.onfocus = function() {
+                        document.getElementById("message").style.display = "block";
+                    }
+
+                    PasswordInput.onblur = function() {
+                        document.getElementById("message").style.display = "none";
+                    }
+
+                    PasswordInput.onkeyup = function() {
+                        var lowerCaseLetters = /[a-z]/g;
+                        if(PasswordInput.value.match(lowerCaseLetters)) {
+                            LowerC.classList.remove("invalidc");
+                            LowerC.classList.add("validc");
+                        } else {
+                            LowerC.classList.remove("validc");
+                            LowerC.classList.add("invalidc");
+                        }
+
+                        var upperCaseLetters = /[A-Z]/g;
+                        if(PasswordInput.value.match(upperCaseLetters)) {
+                            UpperC.classList.remove("invalidc");
+                            UpperC.classList.add("validc");
+                        } else {
+                            UpperC.classList.remove("validc");
+                            UpperC.classList.add("invalidc");
+                        }
+
+                        var numbers = /[0-9]/g;
+                        if(PasswordInput.value.match(numbers)) {
+                            Number.classList.remove("invalidc");
+                            Number.classList.add("validc");
+                        } else {
+                            Number.classList.remove("validc");
+                            Number.classList.add("invalidc");
+                        }
+
+                        if(PasswordInput.value.length >= 8) {
+                            Length.classList.remove("invalidc");
+                            Length.classList.add("validc");
+                        } else {
+                            Length.classList.remove("validc");
+                            Length.classList.add("invalidc");
+                        }
+                    }
+                </script>
+
+                <script>
+                    function checkPasswordMatch() {
+                        var ConfirmationInput = document.getElementById("PasswordConfirmation");
+                        var PassMatch = document.getElementById("PasswordMatch");
+                        var Password = $("#PasswordData").val();
+                        var ConfirmPassword = $("#PasswordConfirmation").val();
+
+                         ConfirmationInput.onfocus = function() {
+                             document.getElementById("messageConfirmation").style.display = "block";
+                         }
+
+                         ConfirmationInput.onblur = function() {
+                             document.getElementById("messageConfirmation").style.display = "none";
+                         }
+
+                        if (Password != ConfirmPassword) {
+                            $("#PasswordMatch").html("Passwords do not match!");
+                            PassMatch.classList.remove("validc");
+                            PassMatch.classList.add("invalidc");
+                        }
+                        else {
+                            $("#PasswordMatch").html("Passwords match.");
+                            PassMatch.classList.remove("invalidc");
+                            PassMatch.classList.add("validc");
+                        }
+                    }
+
+                    $(document).ready(function () {
+                        $("#PasswordData, #PasswordConfirmation").keyup(checkPasswordMatch);
+                    });
+                </script>
+
+                <script>
+            (function() {
+                'use strict';
+                window.addEventListener('load', function() {
+                    var forms = document.getElementsByClassName('needs-validation');
+                    var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('Registration', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                    });
+
+                    var Acceptance = document.getElementById('Acceptance');
+                    var Registration = document.getElementById('Registration');
+                    Acceptance.addEventListener('change', function(event) {
+                        if (event.target.checked) {
+                            Registration.classList.remove('disabled');
+                        } else {
+                            Registration.classList.add('disabled');
+                        }
+                    })
+                }, false);
+            })();
+        </script>
+
+            </div>
+        </div>
+{% endblock %}
